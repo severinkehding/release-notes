@@ -1,0 +1,44 @@
+{
+  "name": "testasd",
+  "version": "21.0.0",
+  "private": true,
+  "description": "Angular - a web framework for modern web apps",
+  "homepage": "https://github.com/angular/angular",
+  "bugs": "https://github.com/angular/angular/issues",
+  "license": "MIT",
+  "//engines-comment": "Keep this in sync with /aio/package.json and /aio/tools/examples/shared/package.json",
+  "engines": {
+    "node": "^16.14.0 || >=18.10.0",
+    "yarn": ">=1.22.4 <2",
+    "npm": "Please use yarn instead of NPM to install dependencies"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular/angular.git"
+  },
+  "scripts": {
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "// 1": "dependencies are used locally and by bazel",
+  "dependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "requirejs": "^2.3.6",
+    "zone.js": "^0.13.0"
+  },
+  "// 2": "devDependencies are not used under Bazel. Many can be removed after test.sh is deleted.",
+  "devDependencies": {
+    "conventional-changelog": "^3.1.24",
+    "firebase-tools": "^11.0.0",
+    "glob": "8.1.0",
+    "gulp": "^4.0.2",
+    "gulp-conventional-changelog": "^2.0.35",
+    "husky": "^8.0.0",
+    "zone.js": "^0.13.0"
+  }
+}
